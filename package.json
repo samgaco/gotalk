@@ -1,0 +1,30 @@
+{
+  "name": "gotalk",
+  "private": true,
+  "dependencies": {
+    "@babel/preset-react": "^7.7.4",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "4.2.2",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "ts-loader": "^6.2.1",
+    "turbolinks": "^5.2.0",
+    "typescript": "^3.7.4"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "eslint-plugin-react": "^7.17.0",
+    "webpack-dev-server": "^3.10.1"
+  }
+}
