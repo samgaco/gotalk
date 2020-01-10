@@ -1,24 +1,41 @@
-# README
+  <h3 align="center">GoTalk</h3>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  <p align="center">
+    Ruby on Rails & React Project
+    <br />
+    <br />
+    <a href="">View Demo</a>
+    ·
+    <a href="">Report Bug</a>
+    ·
+    <a href="">Request Feature</a>
+  </p>
+</p>
 
-Things you may want to cover:
 
-* Ruby version
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-* System dependencies
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+  * [Deployment](#Deployment)
+* [Contact](#Contact)
 
-* Configuration
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+<!-- ABOUT THE PROJECT -->
+## About The Project
+This in an application to book classes with language tutors. 
 
-* Services (job queues, cache servers, search engines, etc.)
+### Deployment
 
-* Deployment instructions
 
-* ...
+
+### Built With
+* [React](https://reactjs.org/)
+* [Redux](https://redux.js.org/introduction/getting-started)
+
+### Contact
+* [Samuel García Companys](https://github.com/samgaco) - samuelgarciacompanys@gmail.com - [Linkedin](https://www.linkedin.com/in/samuel-garc%C3%ADa-companys-0a848284/)
+
