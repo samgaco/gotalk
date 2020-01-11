@@ -1,8 +1,20 @@
 import React from "react"
 import PropTypes from "prop-types"
 import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 class TeacherCard extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleLike = this.handleLike.bind(this)
+  }
+
+
+  handleLike(){
+    this.props.addLike(this.props.id);
+  };
   render () {
     return (
       <div className="col-md-6 col-lg-4">
@@ -14,6 +26,8 @@ class TeacherCard extends React.Component {
           <Link to={`/teachers/${this.props.id}`} className="btn custom-button">
             Contact teacher
           </Link>
+          <FontAwesomeIcon onClick={this.handleLike} icon={faHeart} />
+          {this.props.likes}
         </div>
       </div>
     </div>

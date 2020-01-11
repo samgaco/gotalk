@@ -8,6 +8,7 @@ class Teachers extends React.Component {
       this.state = {
         teachers: []
       };
+      this.addLike = this.addLike.bind(this)
     }
 
     componentDidMount() {
@@ -23,6 +24,23 @@ class Teachers extends React.Component {
           .catch(() => this.props.history.push("/"));
     }
 
+    addLike(teacherId){
+      this.setState({
+
+        teachers: this.state.teachers.map((teacher)=>{
+          if(teacher.id === teacherId){
+              return Object.assign({}, teacher, {
+                likes_count: teacher.likes_count + 1
+              });
+
+          }else{
+            return teacher;
+          }
+        }),
+      });
+
+    };
+
     render() {
         const { teachers } = this.state;
         const allTeachers = teachers.map((teacher, index) => (
@@ -31,7 +49,9 @@ class Teachers extends React.Component {
             name={teacher.name}
             language={teacher.language}
             rate={teacher.rate}
+            likes={teacher.likes_count}
             id={teacher.id}
+            addLike={this.addLike}
           />
         ));
         const noTeachers = (
