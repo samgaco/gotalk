@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_09_161621) do
+ActiveRecord::Schema.define(version: 2020_01_11_212707) do
+
+  create_table "likes", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "teacher_id"
+    t.index ["teacher_id"], name: "index_likes_on_teacher_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
 
   create_table "meetings", force: :cascade do |t|
     t.date "day"

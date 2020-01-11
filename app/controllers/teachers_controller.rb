@@ -1,7 +1,7 @@
 class TeachersController < ApplicationController
   def index
-    teacher = Teacher.all
-    render json: teacher
+    teacher = Teacher.includes(:likes).all
+    render json: teacher.to_json(methods: [:likes_count])
   end
 
   def create
