@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import TeacherCard from "./TeacherCard";
 
 class Teachers extends React.Component {
     constructor(props) {
@@ -25,18 +26,13 @@ class Teachers extends React.Component {
     render() {
         const { teachers } = this.state;
         const allTeachers = teachers.map((teacher, index) => (
-          <div key={index} className="col-md-6 col-lg-4">
-            <div className="card mb-4">
-              <div className="card-body">
-                <h5 className="card-title">{teacher.name}</h5>
-                <p className="card-text">Teaching: {teacher.language}</p>
-                <p className="card-text">Rate: {teacher.rate}$</p>
-                <Link to={`/teachers/${teacher.id}`} className="btn custom-button">
-                  Contact teacher
-                </Link>
-              </div>
-            </div>
-          </div>
+          <TeacherCard
+            key={teacher.id}
+            name={teacher.name}
+            language={teacher.language}
+            rate={teacher.rate}
+            id={teacher.id}
+          />
         ));
         const noTeachers = (
           <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
