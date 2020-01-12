@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ToggleBookTeacher from "./ToggleBookTeacher";
 
 class Teacher extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { teacher: { description: "" } };
+    this.state = { 
+      teacher: { description: "" },
+       isOpen: false };
 
     this.addHtmlEntities = this.addHtmlEntities.bind(this);
   }
@@ -81,9 +84,8 @@ class Teacher extends React.Component {
               />
             </div>
             <div className="col-sm-12 col-lg-2">
-              <button type="button" className="btn btn-danger">
-                Book a class
-              </button>
+                <ToggleBookTeacher />
+
             </div>
           </div>
           <Link to="/teachers" className="btn btn-link">

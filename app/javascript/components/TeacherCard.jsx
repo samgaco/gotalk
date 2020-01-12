@@ -21,13 +21,13 @@ class TeacherCard extends React.Component {
       <div className="card mb-4">
         <div className="card-body">
           <h5 className="card-title">{this.props.name}</h5>
+          <FontAwesomeIcon onClick={this.handleLike} icon={faHeart} />
+          {this.props.likes}
           <p className="card-text">Teaching: {this.props.language}</p>
           <p className="card-text">Rate: {this.props.rate}$</p>
           <Link to={`/teachers/${this.props.id}`} className="btn custom-button">
             Contact teacher
           </Link>
-          <FontAwesomeIcon onClick={this.handleLike} icon={faHeart} />
-          {this.props.likes}
         </div>
       </div>
     </div>
