@@ -109,7 +109,15 @@ class Teachers extends React.Component {
                 handleFilterChange={this.handleFilterChange}
                 />
 
+<div className="text-right mb-3">
+          
+          <Link to="/meetings" className="btn custom-button">
+            Upcoming lessons
+          </Link>
+        </div>
+
                   <div className="text-right mb-3">
+          
                     <Link to="/new_teacher" className="btn custom-button">
                       Join as a teacher
                     </Link>
