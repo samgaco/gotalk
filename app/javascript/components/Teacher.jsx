@@ -7,7 +7,7 @@ class Teacher extends React.Component {
     super(props);
     this.state = { 
       teacher: { description: "" },
-       isOpen: false };
+       isOpen: false      };
 
     this.addHtmlEntities = this.addHtmlEntities.bind(this);
   }
@@ -83,7 +83,7 @@ class Teacher extends React.Component {
                 }}
               />
             </div>
-            <div className="col-sm-12 col-lg-2">
+            <div className="col-sm-12 col-lg-3">
                 <ToggleBookTeacher />
 
             </div>

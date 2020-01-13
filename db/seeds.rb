@@ -11,6 +11,7 @@
         name: Faker::Name.first_name,
         language: Faker::Nation.language,
         rate: rand(1...35),
-        description: Faker::Lorem.paragraphs(number: 1)
+        description: Faker::Lorem.paragraphs(number: 1),
+        lessons: rand(0...500)
     )
 end

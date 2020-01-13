@@ -25,6 +25,7 @@ class TeacherCard extends React.Component {
           {this.props.likes}
           <p className="card-text">Teaching: {this.props.language}</p>
           <p className="card-text">Rate: {this.props.rate}$</p>
+          <p className="card-text">Lessons: {this.props.lessons}</p>
           <Link to={`/teachers/${this.props.id}`} className="btn custom-button">
             Contact teacher
           </Link>

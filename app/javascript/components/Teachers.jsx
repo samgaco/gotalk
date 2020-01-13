@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TeacherCard from "./TeacherCard";
+import Filter from "./filter/index";
+
 
 class Teachers extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        teachers: []
+        teachers: [],
+        filter: 'all'
+
       };
       this.addLike = this.addLike.bind(this)
     }
@@ -50,12 +54,14 @@ class Teachers extends React.Component {
             language={teacher.language}
             rate={teacher.rate}
             likes={teacher.likes_count}
+            lessons={teacher.lessons}
             id={teacher.id}
             addLike={this.addLike}
           />
         ));
         const noTeachers = (
-          <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
+          <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">  <Filter />
+
             <h4>
               No teachers yet. Why not <Link to="/new_teacher">join as a teacher</Link>
             </h4>
@@ -74,6 +80,10 @@ class Teachers extends React.Component {
               </section>
               <div className="py-5">
                 <main className="container">
+                <Filter 
+                teachers={teachers}
+                />
+
                   <div className="text-right mb-3">
                     <Link to="/new_teacher" className="btn custom-button">
                       Join as a teacher
