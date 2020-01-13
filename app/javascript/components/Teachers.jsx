@@ -2,6 +2,24 @@ import React from "react";
 import { Link } from "react-router-dom";
 import TeacherCard from "./TeacherCard";
 import Filter from "./filter/index";
+import { connect } from 'react-redux';
+import Actions from '../actions';
+
+
+const mapStateToProps = function (state) {
+  return {
+    teachers: state.teachers,
+    filter: state.filter,
+  };
+};
+
+const mapDispatchToProps = function (dispatch) {
+  return {
+    filterTeachers: (filter) => {
+      dispatch(Actions.changeFilter(filter));
+    },
+  };
+};
 
 
 class Teachers extends React.Component {
@@ -13,7 +31,13 @@ class Teachers extends React.Component {
 
       };
       this.addLike = this.addLike.bind(this)
+      this.handleFilterChange = this.handleFilterChange.bind(this);
     }
+
+    handleFilterChange(event) {
+      event.preventDefault();
+      this.props.filterTeachers(event.target.value);
+    }  
 
     componentDidMount() {
         const url = "teachers/index";
@@ -82,6 +106,7 @@ class Teachers extends React.Component {
                 <main className="container">
                 <Filter 
                 teachers={teachers}
+                handleFilterChange={this.handleFilterChange}
                 />
 
                   <div className="text-right mb-3">
@@ -103,4 +128,5 @@ class Teachers extends React.Component {
   
   }
 
-  export default Teachers;
+  export default connect(mapStateToProps, mapDispatchToProps)(Teachers);
+
