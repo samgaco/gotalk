@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_13_094944) do
+ActiveRecord::Schema.define(version: 2020_01_13_161226) do
 
   create_table "likes", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -22,10 +22,14 @@ ActiveRecord::Schema.define(version: 2020_01_13_094944) do
   end
 
   create_table "meetings", force: :cascade do |t|
-    t.date "day"
     t.time "scheduled"
+    t.integer "user_id"
+    t.integer "teacher_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "length"
+    t.index ["teacher_id"], name: "index_meetings_on_teacher_id"
+    t.index ["user_id"], name: "index_meetings_on_user_id"
   end
 
   create_table "teachers", force: :cascade do |t|

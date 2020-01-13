@@ -15,3 +15,17 @@
         lessons: rand(0...500)
     )
 end
+
+10.times do 
+    User.create(
+        email: Faker::Internet.email,
+        password: '123456'
+    )
+end
+
+10.times do 
+    Meeting.create(
+        scheduled: Faker::Time.between(from: DateTime.now, to: DateTime.now+30),
+        length: 60
+    )
+end

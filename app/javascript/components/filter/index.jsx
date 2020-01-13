@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 import styles from './styles.module.css'
 
-const CATEGORIES = ['Japanese', 'English'];
+const CATEGORIES = ['Japanese', 'English', 'German', 'Spanish', 'Arabic', 'Yoruba', 'Indonesian', 'Russian', 'I just want to eat fufu'];
 
 class Filter extends React.Component {
     constructor(props) {
