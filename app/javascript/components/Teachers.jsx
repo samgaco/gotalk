@@ -113,7 +113,6 @@ class Teachers extends React.Component {
             current_user={this.state.current_user}
         /> ));
       }else{
-        console.log("in the func", filter)
       const teachersLanguage = this.state.teachers.filter(teacher => teacher.language === filter);
       return teachersLanguage.map((teacher, index) => (
         <TeacherCard
