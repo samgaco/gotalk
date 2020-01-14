@@ -28,6 +28,7 @@ class Teachers extends React.Component {
       this.state = {
         teachers: [],
         current_user: [],
+        languages: [],
         meetings: [],
         filter: 'all'
 
@@ -67,6 +68,17 @@ class Teachers extends React.Component {
             })
             .then(response => this.setState({ current_user: response }))
             .catch(() => this.props.history.push("/"));
+
+            const url_lang = "languages/index";
+            fetch(url_lang)
+              .then(response => {
+                if (response.ok) {
+                  return response.json();
+                }
+                throw new Error("Network response was not ok.");
+              })
+              .then(response => this.setState({ languages: response }))
+              .catch(() => this.props.history.push("/"));
     }
 
     addLike(teacherId){
@@ -86,10 +98,9 @@ class Teachers extends React.Component {
 
     };
 
-
-    render() {
-        const { teachers } = this.state;
-        const allTeachers = teachers.map((teacher, index) => (
+    allTeachers(filter) {
+      if (filter === 'All') {
+        return this.state.teachers.map((teacher, index) => (
           <TeacherCard
             key={teacher.id}
             name={teacher.name}
@@ -100,10 +111,34 @@ class Teachers extends React.Component {
             id={teacher.id}
             addLike={this.addLike}
             current_user={this.state.current_user}
-          />
-        ));
+        /> ));
+      }else{
+        console.log("in the func", filter)
+      const teachersLanguage = this.state.teachers.filter(teacher => teacher.language === filter);
+      return teachersLanguage.map((teacher, index) => (
+        <TeacherCard
+          key={teacher.id}
+          name={teacher.name}
+          language={teacher.language}
+          rate={teacher.rate}
+          likes={teacher.likes_count}
+          lessons={teacher.lessons}
+          id={teacher.id}
+          addLike={this.addLike}
+          current_user={this.state.current_user}
+      />
+       ));
+      }
+    }
+
+
+
+    render() {
+        const {teachers} = this.state
+
         const noTeachers = (
-          <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">  <Filter />
+          <div className="vw-100 vh-50 d-flex align-items-center justify-content-center"> 
+           <Filter languages={this.state.languages}/>
 
             <h4>
               No teachers yet. Why not <Link to="/new_teacher">join as a teacher</Link>
@@ -127,6 +162,7 @@ class Teachers extends React.Component {
               <div className="py-5">
                 <main className="container">
                 <Filter 
+                languages={this.state.languages}
                 teachers={teachers}
                 handleFilterChange={this.handleFilterChange}
                 />
@@ -149,7 +185,7 @@ class Teachers extends React.Component {
                     </Link>
                   </div>
                   <div className="row">
-                    {teachers.length > 0 ? allTeachers : noTeachers}
+                    {teachers.length > 0 ? this.allTeachers(this.props.filter) : noTeachers}
                   </div>
                   <Link to="/" className="btn btn-link">
                     Home

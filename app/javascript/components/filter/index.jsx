@@ -3,16 +3,16 @@ import classnames from 'classnames'
 
 import styles from './styles.module.css'
 
-const CATEGORIES = ['Japanese', 'English', 'German', 'Spanish', 'Arabic', 'Yoruba', 'Indonesian', 'Russian', 'I just want to eat fufu'];
 
 class Filter extends React.Component {
     constructor(props) {
         super(props);
       }
   
-  
+
 
     render() {
+        const CATEGORIES = this.props.languages
         const options = CATEGORIES.map(category => <option key={category}>{category}</option>);
         const containerClasses = classnames('container', 'mb-1', styles.container)
         const formClasses = classnames('form-horizontal', styles.form)
@@ -68,7 +68,8 @@ class Filter extends React.Component {
                                 <div className="col-9 col-sm-12">
                                     <select className="form-select" id="sortorder">
                                         <option value="">Choose...</option>
-
+                                        <option key={1}>Most expensive first</option>
+                                        <option key={2}>Less expensive first</option>
                                     </select>
                                 </div>
                             </div>

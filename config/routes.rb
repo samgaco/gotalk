@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post 'teachers/meetings/create', to: 'meetings#create'
   get 'teachers/index'
   post 'teachers/create'
+  get 'languages/index'
   get '/show/:id', to: 'teachers#show'
   delete '/destroy/:id', to: 'teachers#destroy'
 
