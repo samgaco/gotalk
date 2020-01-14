@@ -11,22 +11,51 @@ class Scheduler extends React.Component {
   };
 
  
-  handleChange = date => {
+  handleDateChange = date => {
     this.setState({
       startDate: date
     });
   };
+
+
+  CreateMeeting = (data) => {
+    console.log('what do i HAVE', JSON.stringify(data))
+    const url = "meetings/create";
+    fetch(url, {
+      method: 'post',
+      body: JSON.stringify(data),
+      headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+  }
+
+  handleCreateMeeting = (data) =>{
+      this.CreateMeeting(data);
+  };
+
+  SubmitMeeting = () =>{
+    const newMeeting={
+      scheduled: this.state.startDate,
+      teacher_id: this.props.teacherId,
+      user_id: this.props.current_user.id,
+      length: 60
+    }
+
+    this.handleCreateMeeting(newMeeting);
+  };
  
   render() {
     return (
-      <form>
+      <div>
       <label>
       Email:
-      <input type="text" defaultValue={this.props.current_user} name="name" />
+      <input type="text" defaultValue={this.props.current_user.email} name="name" />
     </label>
       <DatePicker
       selected={this.state.startDate}
-      onChange={this.handleChange}
+      onChange={this.handleDateChange}
       showTimeSelect
       // includeTimes={[
       //   setHours(setMinutes(new Date(), 0), 17),
@@ -36,8 +65,10 @@ class Scheduler extends React.Component {
       // ]}
       dateFormat="MMMM d, yyyy h:mm aa"
     />
-    <input type="submit" value="Submit" />
-    </form>
+    <button onClick={this.SubmitMeeting} className="btn btn-blue">
+      Send
+      </button>
+    </div>
     );
   }
 }

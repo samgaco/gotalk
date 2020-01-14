@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'users/index'
   get 'meetings/index'
+  post 'teachers/meetings/create', to: 'meetings#create'
   get 'teachers/index'
   post 'teachers/create'
   get '/show/:id', to: 'teachers#show'

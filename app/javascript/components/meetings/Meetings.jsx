@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 class Meetings extends React.Component {
 
     render() {
-      console.log(this.props.location.state)
         const { meetings } = this.props.location.state;
         const allMeetings = meetings.map((meeting, index) => (
           <MeetingCard

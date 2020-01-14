@@ -34,6 +34,8 @@ class Teachers extends React.Component {
       };
       this.addLike = this.addLike.bind(this)
       this.handleFilterChange = this.handleFilterChange.bind(this);
+
+
     }
 
     handleFilterChange(event) {
@@ -84,6 +86,7 @@ class Teachers extends React.Component {
 
     };
 
+
     render() {
         const { teachers } = this.state;
         const allTeachers = teachers.map((teacher, index) => (
@@ -96,7 +99,7 @@ class Teachers extends React.Component {
             lessons={teacher.lessons}
             id={teacher.id}
             addLike={this.addLike}
-            current_user={this.state.current_user.email}
+            current_user={this.state.current_user}
           />
         ));
         const noTeachers = (

@@ -5,7 +5,7 @@ class TeachersController < ApplicationController
   end
 
   def create
-    teacher = Teacher.create!(recipe_params)
+    teacher = Teacher.create!(teacher_params)
     if teacher
       render json: teacher
     else

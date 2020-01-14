@@ -12,10 +12,19 @@ class MeetingsController < ApplicationController
         end
     end
 
+    def create
+      meeting = Meeting.create!(meeting_params)
+      if teacher
+        render json: meeting
+      else
+        render json: meeting.errors
+      end
+    end
+
     private
 
     def meeting_params
-      params.permit(:day, :scheduled, :length)
+      params.permit(:user_id, :teacher_id, :scheduled, :length)
     end
   
     def meeting
