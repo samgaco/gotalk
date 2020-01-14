@@ -7,11 +7,12 @@ class ToggleBookTeacher extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
     this.openScheduler = this.openScheduler.bind(this);
     this.closeScheduler = this.closeScheduler.bind(this);
   }
+
 
   openScheduler(){
         this.setState({isOpen: true})
@@ -23,7 +24,7 @@ class ToggleBookTeacher extends React.Component {
 
   render() {
     if (this.state.isOpen) {
-      return <Scheduler />;
+      return <Scheduler current_user={this.props.current_user}/>;
     } else {
       return <BookTeacherButton openScheduler={this.openScheduler}/>;
     }

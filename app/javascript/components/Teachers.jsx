@@ -27,6 +27,7 @@ class Teachers extends React.Component {
       super(props);
       this.state = {
         teachers: [],
+        current_user: [],
         filter: 'all'
 
       };
@@ -50,6 +51,17 @@ class Teachers extends React.Component {
           })
           .then(response => this.setState({ teachers: response }))
           .catch(() => this.props.history.push("/"));
+
+          const url_user = "users/index";
+          fetch(url_user)
+            .then(response => {
+              if (response.ok) {
+                return response.json();
+              }
+              throw new Error("Network response was not ok.");
+            })
+            .then(response => this.setState({ current_user: response.email }))
+            .catch(() => this.props.history.push("/"));
     }
 
     addLike(teacherId){
@@ -81,6 +93,7 @@ class Teachers extends React.Component {
             lessons={teacher.lessons}
             id={teacher.id}
             addLike={this.addLike}
+            current_user={this.state.current_user}
           />
         ));
         const noTeachers = (
@@ -97,6 +110,9 @@ class Teachers extends React.Component {
               <section className="jumbotron jumbotron-fluid text-center">
                 <div className="container py-5">
                   <h1 className="display-4">Teachers</h1>
+                  <p className="lead text-muted">
+                    You are logged as {this.state.current_user}
+                  </p>
                   <p className="lead text-muted">
                     Some of the available teachers
                   </p>

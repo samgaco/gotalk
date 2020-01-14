@@ -7,8 +7,9 @@ import "react-datepicker/dist/react-datepicker.css";
 class Scheduler extends React.Component {
   
   state = {
-    startDate: new Date()
+    startDate: new Date(),
   };
+
  
   handleChange = date => {
     this.setState({
@@ -18,6 +19,11 @@ class Scheduler extends React.Component {
  
   render() {
     return (
+      <form>
+      <label>
+      Email:
+      <input type="text" defaultValue={this.props.current_user} name="name" />
+    </label>
       <DatePicker
       selected={this.state.startDate}
       onChange={this.handleChange}
@@ -30,6 +36,8 @@ class Scheduler extends React.Component {
       // ]}
       dateFormat="MMMM d, yyyy h:mm aa"
     />
+    <input type="submit" value="Submit" />
+    </form>
     );
   }
 }

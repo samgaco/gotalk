@@ -84,8 +84,7 @@ class Teacher extends React.Component {
               />
             </div>
             <div className="col-sm-12 col-lg-3">
-                <ToggleBookTeacher />
-
+                <ToggleBookTeacher current_user={this.props.location.state.current_user} />
             </div>
           </div>
           <Link to="/teachers" className="btn btn-link">

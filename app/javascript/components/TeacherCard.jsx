@@ -26,7 +26,11 @@ class TeacherCard extends React.Component {
           <p className="card-text">Teaching: {this.props.language}</p>
           <p className="card-text">Rate: {this.props.rate}$</p>
           <p className="card-text">Lessons: {this.props.lessons}</p>
-          <Link to={`/teachers/${this.props.id}`} className="btn custom-button">
+          <Link to={{
+            pathname: `/teachers/${this.props.id}`,
+            state:{current_user: this.props.current_user}
+            }} 
+            className="btn custom-button">
             Contact teacher
           </Link>
         </div>
