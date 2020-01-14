@@ -28,6 +28,7 @@ class Teachers extends React.Component {
       this.state = {
         teachers: [],
         current_user: [],
+        meetings: [],
         filter: 'all'
 
       };
@@ -41,6 +42,7 @@ class Teachers extends React.Component {
     }  
 
     componentDidMount() {
+
         const url = "teachers/index";
         fetch(url)
           .then(response => {
@@ -52,6 +54,7 @@ class Teachers extends React.Component {
           .then(response => this.setState({ teachers: response }))
           .catch(() => this.props.history.push("/"));
 
+
           const url_user = "users/index";
           fetch(url_user)
             .then(response => {
@@ -60,7 +63,7 @@ class Teachers extends React.Component {
               }
               throw new Error("Network response was not ok.");
             })
-            .then(response => this.setState({ current_user: response.email }))
+            .then(response => this.setState({ current_user: response }))
             .catch(() => this.props.history.push("/"));
     }
 
@@ -93,7 +96,7 @@ class Teachers extends React.Component {
             lessons={teacher.lessons}
             id={teacher.id}
             addLike={this.addLike}
-            current_user={this.state.current_user}
+            current_user={this.state.current_user.email}
           />
         ));
         const noTeachers = (
@@ -111,7 +114,7 @@ class Teachers extends React.Component {
                 <div className="container py-5">
                   <h1 className="display-4">Teachers</h1>
                   <p className="lead text-muted">
-                    You are logged as {this.state.current_user}
+                    You are logged as {this.state.current_user.email}
                   </p>
                   <p className="lead text-muted">
                     Some of the available teachers
@@ -127,7 +130,11 @@ class Teachers extends React.Component {
 
 <div className="text-right mb-3">
           
-          <Link to="/meetings" className="btn custom-button">
+          <Link to={{
+            pathname: "/meetings",
+            state: {meetings: this.state.current_user.meetings}}
+          } 
+            className="btn custom-button">
             Upcoming lessons
           </Link>
         </div>

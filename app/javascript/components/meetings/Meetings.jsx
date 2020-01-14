@@ -5,29 +5,10 @@ import { connect } from 'react-redux';
 
 
 class Meetings extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        meetings: []
-      };
-
-    }
-
-    componentDidMount() {
-        const url = "meetings/index";
-        fetch(url)
-          .then(response => {
-            if (response.ok) {
-              return response.json();
-            }
-            throw new Error("Network response was not ok.");
-          })
-          .then(response => this.setState({ meetings: response }))
-          .catch(() => this.props.history.push("/"));
-    }
 
     render() {
-        const { meetings } = this.state;
+      console.log(this.props.location.state)
+        const { meetings } = this.props.location.state;
         const allMeetings = meetings.map((meeting, index) => (
           <MeetingCard
             key={meeting.id}
