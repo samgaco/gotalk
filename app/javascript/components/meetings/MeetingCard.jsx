@@ -18,8 +18,9 @@ class MeetingCard extends React.Component {
       <div className="card mb-8 shadow">
         <div className="card-body">
           {this.props.likes}
-          <p className="card-text">Scheduled for: {this.props.time}</p>
+          <p className="card-text font-weight-bold">{this.props.language} lesson booked with {this.props.teacher}</p>
           <p className="card-text">Duration of the lesson: {this.props.duration} minutes</p>
+          <p className="card-text">Scheduled for: {this.props.time}</p>
         </div>
       </div>
     </div>

@@ -3,18 +3,40 @@ import { Link } from "react-router-dom";
 import MeetingCard from "./MeetingCard";
 import { connect } from 'react-redux';
 import '../styles/teachers.scss'
+import Teachers from "../Teachers";
 
 
 class Meetings extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      meetings: []
+    };
+  }
+  componentDidMount() {
 
-    render() {
-        const { meetings } = this.props.location.state;
+    const url = "/meetings/index";
+    fetch(url)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network response was not ok.");
+      })
+      .then(response => this.setState({ meetings: response }))
+      .catch(() => this.props.history.push("/")); 
+    };
+
+    render(){
+        const { meetings } = this.state;
         const allMeetings = meetings.map((meeting, index) => (
           <MeetingCard
             key={meeting.id}
             time={meeting.scheduled}
             duration={meeting.length}
             id={meeting.id}
+            teacher={meeting.teacher.name}
+            language={meeting.teacher.language}
           />
         ));
         const noMeetings = (

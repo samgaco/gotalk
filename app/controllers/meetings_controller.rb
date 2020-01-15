@@ -3,7 +3,7 @@ class MeetingsController < ApplicationController
 
     def index 
         meeting = Meeting.all
-        render json: meeting
+        render json: meeting.to_json(:include => [:teacher])
     end
 
     def show
