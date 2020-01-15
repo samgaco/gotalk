@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ToggleBookTeacher from "./ToggleBookTeacher";
+import { CircleToBlockLoading } from 'react-loadingg';
+
 
 class Teacher extends React.Component {
   constructor(props) {
@@ -25,6 +27,7 @@ class Teacher extends React.Component {
   };
   
   componentDidMount() {
+
     const {
       match: {
         params: { id }
@@ -88,7 +91,7 @@ class Teacher extends React.Component {
                 {teacherLanguages}
               </ul>
             </div>
-            <div className="col-sm-12 col-lg-7">
+            <div className="mb-2 col-sm-12 col-lg-7">
               <h5 className="mb-2">Description:</h5>
               <div
                 dangerouslySetInnerHTML={{

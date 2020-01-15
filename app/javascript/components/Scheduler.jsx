@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
+import './styles/teachers.scss'
 
 
 class Scheduler extends React.Component {
@@ -28,7 +29,6 @@ class Scheduler extends React.Component {
 
   handleCreateMeeting = (data) =>{
       this.CreateMeeting(data);
-      console.log(JSON.stringify(data))
   };
 
   SubmitMeeting = () =>{
@@ -39,11 +39,12 @@ class Scheduler extends React.Component {
       length: 60
     }
     this.handleCreateMeeting(newMeeting);
+    this.props.closeScheduler();
   };
  
   render() {
     return (
-      <div>
+      <div className="shadow GoTalk-BgAndColor">
       <label>
       Email: <br/>
       <input type="text" defaultValue={this.props.current_user.email} name="name" />
@@ -60,7 +61,7 @@ class Scheduler extends React.Component {
       // ]}
       dateFormat="MMMM Do yyyy, h:mm:ss a"
     />
-    <button onClick={this.SubmitMeeting} className="btn btn-blue">
+    <button onClick={this.SubmitMeeting} className="btn contactButton">
       Send
       </button>
     </div>

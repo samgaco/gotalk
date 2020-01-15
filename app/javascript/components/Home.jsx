@@ -28,8 +28,9 @@ class Home extends React.Component {
 
 render(){
 
-  const DisplayLanguages = this.state.languages.map((language)=> 
+  const DisplayLanguages = this.state.languages.map((language, index)=> 
   <LanguageCard 
+  key={index}
   language={language}
   />);
 
