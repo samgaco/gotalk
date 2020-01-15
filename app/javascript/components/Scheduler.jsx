@@ -19,7 +19,6 @@ class Scheduler extends React.Component {
 
 
   CreateMeeting = (data) => {
-    console.log('what do i HAVE', JSON.stringify(data))
     const url = "meetings/create";
     fetch(url, {
       method: 'post',

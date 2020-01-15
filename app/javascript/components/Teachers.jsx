@@ -10,6 +10,7 @@ const mapStateToProps = function (state) {
   return {
     teachers: state.teachers,
     filter: state.filter,
+    filterRate: state.filterRate
   };
 };
 
@@ -18,6 +19,9 @@ const mapDispatchToProps = function (dispatch) {
     filterTeachers: (filter) => {
       dispatch(Actions.changeFilter(filter));
     },
+    filterRatesTeachers: (filter) =>{
+      dispatch(Actions.changeRateFilter(filter));
+    }
   };
 };
 
@@ -30,11 +34,14 @@ class Teachers extends React.Component {
         current_user: [],
         languages: [],
         meetings: [],
-        filter: 'all'
+        filter: '',
+        filterRate: ''
 
       };
       this.addLike = this.addLike.bind(this)
       this.handleFilterChange = this.handleFilterChange.bind(this);
+      this.handleFilterRateChange = this.handleFilterRateChange.bind(this);
+      this.mapTeachers = this.mapTeachers.bind(this)
 
 
     }
@@ -42,6 +49,11 @@ class Teachers extends React.Component {
     handleFilterChange(event) {
       event.preventDefault();
       this.props.filterTeachers(event.target.value);
+    }  
+
+    handleFilterRateChange(event) {
+      event.preventDefault();
+      this.props.filterRatesTeachers(event.target.value);
     }  
 
     componentDidMount() {
@@ -98,23 +110,8 @@ class Teachers extends React.Component {
 
     };
 
-    allTeachers(filter) {
-      if (filter === 'All') {
-        return this.state.teachers.map((teacher, index) => (
-          <TeacherCard
-            key={teacher.id}
-            name={teacher.name}
-            language={teacher.language}
-            rate={teacher.rate}
-            likes={teacher.likes_count}
-            lessons={teacher.lessons}
-            id={teacher.id}
-            addLike={this.addLike}
-            current_user={this.state.current_user}
-        /> ));
-      }else{
-      const teachersLanguage = this.state.teachers.filter(teacher => teacher.language === filter);
-      return teachersLanguage.map((teacher, index) => (
+    mapTeachers(teachers){
+      return teachers.map((teacher, index) => (
         <TeacherCard
           key={teacher.id}
           name={teacher.name}
@@ -125,15 +122,35 @@ class Teachers extends React.Component {
           id={teacher.id}
           addLike={this.addLike}
           current_user={this.state.current_user}
-      />
-       ));
+      /> ));
+    }
+
+    allTeachers(filter) {
+      if (filter === '') {
+        return this.state.teachers;
+      }else{
+      const teachersLanguage = this.state.teachers.filter(teacher => teacher.language === filter);
+      return teachersLanguage;
       }
     }
 
 
+    allTeachersRates(filterTeachers, filterRate) {
+      if (filterRate === '') {
+        return  this.mapTeachers(filterTeachers);
+      }else if(filterRate === 'Most expensive first'){
+        console.log('most expensive')
+      const teachersLanguage = filterTeachers.sort(function(a,b){return b.rate - a.rate;} );
+      return this.mapTeachers(teachersLanguage);
+      }else if(filterRate==='Less expensive first'){
+        console.log('cheap')
 
+        const teachersLanguage = filterTeachers.sort(function(a,b){return a.rate - b.rate;} );
+        return this.mapTeachers(teachersLanguage);
+      }
+    }
     render() {
-        const {teachers} = this.state
+        const {teachers} = this.state 
 
         const noTeachers = (
           <div className="vw-100 vh-50 d-flex align-items-center justify-content-center"> 
@@ -164,6 +181,7 @@ class Teachers extends React.Component {
                 languages={this.state.languages}
                 teachers={teachers}
                 handleFilterChange={this.handleFilterChange}
+                handleFilterRateChange={this.handleFilterRateChange}
                 />
 
 <div className="text-right mb-3">
@@ -184,7 +202,7 @@ class Teachers extends React.Component {
                     </Link>
                   </div>
                   <div className="row">
-                    {teachers.length > 0 ? this.allTeachers(this.props.filter) : noTeachers}
+                    {teachers.length > 0 ? this.allTeachersRates(this.allTeachers(this.props.filter), this.props.filterRate ): noTeachers}
                   </div>
                   <Link to="/" className="btn btn-link">
                     Home

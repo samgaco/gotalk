@@ -66,7 +66,7 @@ class Filter extends React.Component {
                   </label>
                                 </div>
                                 <div className="col-9 col-sm-12">
-                                    <select className="form-select" id="sortorder">
+                                    <select className="form-select" id="sortorder" onChange={this.props.handleFilterRateChange}>
                                         <option value="">Choose...</option>
                                         <option key={1}>Most expensive first</option>
                                         <option key={2}>Less expensive first</option>
