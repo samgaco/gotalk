@@ -1,7 +1,6 @@
 import * as React from 'react'
 import classnames from 'classnames'
-
-import styles from './styles.module.css'
+import '../styles/teachers.scss'
 
 
 class Filter extends React.Component {
@@ -14,17 +13,15 @@ class Filter extends React.Component {
     render() {
         const CATEGORIES = this.props.languages
         const options = CATEGORIES.map(category => <option key={category}>{category}</option>);
-        const containerClasses = classnames('container', 'mb-1', styles.container)
-        const formClasses = classnames('form-horizontal', styles.form)
+        const containerClasses = classnames('container', 'GoTalk-BgAndColor')
+        const formClasses = classnames('form-horizontal', 'GoTalk-BgAndColor')
 
         return (
             <div className={containerClasses}>
                 <form className={formClasses} noValidate>
                     <p className="mb-1">Refine your results</p>
                     <div className="columns text-center">
-                        <div className="column col-4 col-xs-12">
 
-                        </div>
                         <div className="column col-4 col-xs-12">
                             <div className="form-group">
                                 <div className="col-3 col-sm-12">

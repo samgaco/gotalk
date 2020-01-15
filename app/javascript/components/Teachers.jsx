@@ -4,6 +4,7 @@ import TeacherCard from "./TeacherCard";
 import Filter from "./filter/index";
 import { connect } from 'react-redux';
 import Actions from '../actions';
+import './styles/teachers.scss'
 
 
 const mapStateToProps = function (state) {
@@ -176,9 +177,9 @@ class Teachers extends React.Component {
 
         return (
             <>
-              <section className="jumbotron jumbotron-fluid text-center">
+              <section className="GoTalk-BgAndColor jumbotron jumbotron-fluid text-center">
                 <div className="container py-5">
-                  <h1 className="display-4">Teachers</h1>
+                  <h1 className="display-4">GoTalk!</h1>
                   <p className="lead text-muted">
                     You are logged as {this.state.current_user.email}
                   </p>

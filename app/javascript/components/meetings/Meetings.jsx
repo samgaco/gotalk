@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import MeetingCard from "./MeetingCard";
 import { connect } from 'react-redux';
+import '../styles/teachers.scss'
 
 
 class Meetings extends React.Component {
@@ -27,7 +28,7 @@ class Meetings extends React.Component {
 
         return (
             <>
-              <section className="jumbotron jumbotron-fluid text-center">
+              <section className="GoTalk-BgAndColor jumbotron jumbotron-fluid text-center">
                 <div className="container py-5">
                   <h1 className="display-4">Upcoming Lessons</h1>
           
