@@ -34,7 +34,7 @@ render(){
   />);
 
   return(
-    <div className="vw-100 vh-100 primary-color d-flex align-items-center justify-content-center">
+    <div className="primary-color d-flex align-items-center justify-content-center">
     <div className="jumbotron jumbotron-fluid bg-transparent">
       <div className="container secondary-color">
       <h1 className="useFont display-4">GoTalk!</h1>
@@ -51,7 +51,7 @@ render(){
         </Link>
       </div>
 
-      <div className='d-flex flex-row flex-wrap'>
+      <div className='language-card-list justify-content-center d-flex flex-row flex-wrap'>
 {DisplayLanguages}
 </div>
     </div>
