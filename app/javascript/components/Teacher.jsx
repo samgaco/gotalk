@@ -42,35 +42,26 @@ class Teacher extends React.Component {
   render() {
     const { teacher } = this.state;
     let teacherLanguages = `${teacher.language}`;
-
-    // if (teacher.language.length > 0) {
-    //     teacherLanguages = teacher.language
-    //     .split(",")
-    //     .map((language, index) => (
-    //       <li key={index} className="list-group-item">
-    //         {language}
-    //       </li>
-    //     ));
-    // }
     const teacherDescription = this.addHtmlEntities(teacher.description);
 
     return (
-      <div className="">
+      <div className="teacherFull">
         <div className="hero position-relative d-flex align-items-center justify-content-center">
-          {/* <img
+          <img
             src={teacher.image}
             alt={`${teacher.name} image`}
             className="img-fluid position-absolute"
-          /> */}
+          />
           <div className="overlay bg-dark position-absolute" />
-          <h1 className="display-4 position-relative text-white">
-            {teacher.name}
-          </h1>
+
         </div>
-        <div className="container py-5">
+        <div className="teacherBody container py-5">
           <div className="row">
             <div className="col-sm-12 col-lg-3">
               <ul className="list-group">
+              <h1>
+            {teacher.name}
+          </h1>
                 <h5 className="mb-2">Languages:</h5>
                 {teacherLanguages}
               </ul>
