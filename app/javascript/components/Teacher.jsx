@@ -7,11 +7,23 @@ class Teacher extends React.Component {
     super(props);
     this.state = { 
       teacher: { description: "" },
-       isOpen: false      };
+       isOpen: false ,
+       current_user: [] ,
+       teacher:[],
+       startDate: new Date()
+       };
+
 
     this.addHtmlEntities = this.addHtmlEntities.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
   }
 
+  handleDateChange = event => {
+    this.setState({
+      startDate: event
+    });
+  };
+  
   componentDidMount() {
     const {
       match: {
@@ -30,6 +42,16 @@ class Teacher extends React.Component {
       })
       .then(response => this.setState({ teacher: response }))
       .catch(() => this.props.history.push("/teachers"));
+
+      const url_user = "/users/index";
+      fetch(url_user)
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error("Network response was not ok.");
+        })
+        .then(response => this.setState({ current_user: response }))
   }
 
   addHtmlEntities(str) {
@@ -76,8 +98,10 @@ class Teacher extends React.Component {
             </div>
             <div className="col-sm-12 col-lg-3">
                 <ToggleBookTeacher 
-                current_user={this.props.location.state.current_user} 
-                teacherId={this.props.location.state.teacherId}
+                current_user={this.state.current_user} 
+                teacherId={teacher.id}
+                handleDateChange={this.handleDateChange}
+                date={this.state.startDate}
                 />
             </div>
           </div>

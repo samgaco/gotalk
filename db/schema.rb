@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_01_15_131325) do
   end
 
   create_table "meetings", force: :cascade do |t|
-    t.time "scheduled"
+    t.datetime "scheduled"
     t.integer "user_id"
     t.integer "teacher_id"
     t.datetime "created_at", precision: 6, null: false

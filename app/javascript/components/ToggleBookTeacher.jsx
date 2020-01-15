@@ -28,9 +28,13 @@ class ToggleBookTeacher extends React.Component {
       return <Scheduler 
       current_user={this.props.current_user}
       teacherId={this.props.teacherId}
+      handleDateChange={this.props.handleDateChange}
+      date={this.props.date}
       />;
     } else {
-      return <BookTeacherButton openScheduler={this.openScheduler}/>;
+      return <BookTeacherButton 
+      openScheduler={this.openScheduler}
+      />;
     }
   }
 }

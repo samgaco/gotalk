@@ -2,7 +2,7 @@ class MeetingsController < ApplicationController
     skip_before_action :verify_authenticity_token
 
     def index 
-        meeting = Meeting.all
+        meeting = current_user.meetings
         render json: meeting.to_json(:include => [:teacher])
     end
 

@@ -5,17 +5,13 @@ import "react-datepicker/dist/react-datepicker.css";
 
 
 class Scheduler extends React.Component {
-  
-  state = {
-    startDate: new Date(),
-  };
 
- 
-  handleDateChange = date => {
-    this.setState({
-      startDate: date
-    });
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      startDate: new Date()
+    };}
+
 
 
   CreateMeeting = (data) => {
@@ -32,16 +28,16 @@ class Scheduler extends React.Component {
 
   handleCreateMeeting = (data) =>{
       this.CreateMeeting(data);
+      console.log(JSON.stringify(data))
   };
 
   SubmitMeeting = () =>{
     const newMeeting={
-      scheduled: this.state.startDate,
+      scheduled: new Date(this.props.date).toISOString(),
       teacher_id: this.props.teacherId,
       user_id: this.props.current_user.id,
       length: 60
     }
-
     this.handleCreateMeeting(newMeeting);
   };
  
@@ -49,12 +45,12 @@ class Scheduler extends React.Component {
     return (
       <div>
       <label>
-      Email:
+      Email: <br/>
       <input type="text" defaultValue={this.props.current_user.email} name="name" />
     </label>
       <DatePicker
-      selected={this.state.startDate}
-      onChange={this.handleDateChange}
+      selected={this.props.date}
+      onChange={this.props.handleDateChange}
       showTimeSelect
       // includeTimes={[
       //   setHours(setMinutes(new Date(), 0), 17),
@@ -62,7 +58,7 @@ class Scheduler extends React.Component {
       //   setHours(setMinutes(new Date(), 30), 19),
       //   setHours(setMinutes(new Date(), 30), 17)
       // ]}
-      dateFormat="MMMM d, yyyy h:mm aa"
+      dateFormat="MMMM Do yyyy, h:mm:ss a"
     />
     <button onClick={this.SubmitMeeting} className="btn btn-blue">
       Send
