@@ -179,7 +179,7 @@ class Teachers extends React.Component {
             <>
               <section className="GoTalk-BgAndColor jumbotron jumbotron-fluid text-center">
                 <div className="container py-5">
-                  <h1 className="display-4">GoTalk!</h1>
+                  <h1 className="useFont display-4">GoTalk!</h1>
                   <p className="lead text-muted">
                     You are logged as {this.state.current_user.email}
                   </p>

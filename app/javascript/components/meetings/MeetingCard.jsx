@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import '../styles/teachers.scss'
+
 
 class MeetingCard extends React.Component {
   constructor(props) {
@@ -12,8 +14,8 @@ class MeetingCard extends React.Component {
 
   render () {
     return (
-      <div className="col-md-6 col-lg-12">
-      <div className="card mb-8">
+      <div className="col-md-6 col-lg-12 givemargin">
+      <div className="card mb-8 shadow">
         <div className="card-body">
           {this.props.likes}
           <p className="card-text">Scheduled for: {this.props.time}</p>

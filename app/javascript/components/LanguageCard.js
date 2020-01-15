@@ -5,7 +5,7 @@ import './styles/teachers.scss'
 class LanguageCard extends React.Component {
   render () {
     return (
-      <div className="GoTalk-BgAndColor col-sm-12 col-lg-6">
+      <div className="GoTalk-BgAndColor col-sm-12 col-lg-2 shadow givemargin">
           {this.props.language}
         </div>
     );

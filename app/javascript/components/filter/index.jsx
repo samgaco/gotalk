@@ -13,7 +13,7 @@ class Filter extends React.Component {
     render() {
         const CATEGORIES = this.props.languages
         const options = CATEGORIES.map(category => <option key={category}>{category}</option>);
-        const containerClasses = classnames('container', 'GoTalk-BgAndColor')
+        const containerClasses = classnames('container', 'GoTalk-BgAndColor', 'shadow')
         const formClasses = classnames('form-horizontal', 'GoTalk-BgAndColor')
 
         return (

@@ -19,15 +19,19 @@ class TeacherCard extends React.Component {
   };
   render () {
     return (
-<div className="col-md-6 col-lg-4">
-      <div className="card mb-4">
+<div className="useFont col-md-6 col-lg-4">
+      <div className="card mb-4 shadow">
         <div className="card-body">
-          <h5 className="card-title">{this.props.name}</h5>
-          <FontAwesomeIcon className='like' onClick={this.handleLike} icon={faHeart} />
-          {''+ this.props.likes}
-          <p className="card-text">Teaching: {this.props.language}</p>
-          <p className="card-text">Rate: {this.props.rate}$</p>
-          <p className="card-text">Lessons: {this.props.lessons}</p>
+          <h5 className="card-title font-weight-bold">{this.props.name}</h5>
+          <p className="card-text useFont">Teaching: {this.props.language}</p>
+          <div className='d-flex flex-row justify-content-around'>
+          <p className="font-weight-bold card-text">{this.props.rate}$</p>
+          <p className="font-weight-bold card-text">{this.props.lessons} Lessons given</p>
+          <div>
+          <FontAwesomeIcon className='font-weight-bold like' onClick={this.handleLike} icon={faHeart} />
+          {' '+ this.props.likes}
+          </div>
+          </div>
 
           
           <Link to={{

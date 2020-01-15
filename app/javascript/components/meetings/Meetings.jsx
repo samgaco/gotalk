@@ -30,7 +30,7 @@ class Meetings extends React.Component {
             <>
               <section className="GoTalk-BgAndColor jumbotron jumbotron-fluid text-center">
                 <div className="container py-5">
-                  <h1 className="display-4">Upcoming Lessons</h1>
+                  <h1 className="display-4 useFont">Upcoming Lessons</h1>
           
                 </div>
               </section>
