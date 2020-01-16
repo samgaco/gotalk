@@ -21,8 +21,7 @@ module.exports = {
   plugins: [
     'react',
   ],
-  rules: {
-    "import/no-unresolved": 0  },
+  rules: { "import/no-unresolved": [ 2, { caseSensitive: false } ],
   settings: {
     'import/resolver': {
       node: {
