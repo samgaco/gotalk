@@ -9,8 +9,7 @@ import '../styles/teachers.scss';
 class Filter extends React.Component {
   render() {
     const { languages } = this.props;
-    const CATEGORIES = languages;
-    const options = CATEGORIES.map((category) => <option key={category}>{category}</option>);
+    const options = languages.map((category) => <option key={category}>{category}</option>);
     const containerClasses = classnames('container', 'GoTalk-BgAndColor', 'shadow');
     const formClasses = classnames('form-horizontal', 'GoTalk-BgAndColor');
     const { handleFilterChange, handleFilterRateChange } = this.props;
@@ -31,7 +30,7 @@ class Filter extends React.Component {
                   <select className="form-select" id="language" onChange={handleFilterChange}>
                     <option value="">All</option>
 
-                    {options}
+                    {languages? options:console.log("I want fufu")}
 
                   </select>
                 </div>
