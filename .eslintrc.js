@@ -22,8 +22,7 @@ module.exports = {
     'react',
   ],
   rules: {
-    "import/no-unresolved": "off"
-  },
+    "import/no-unresolved": 0  },
   settings: {
     'import/resolver': {
       node: {
