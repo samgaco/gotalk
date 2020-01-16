@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LanguageCard from './LanguageCard';
@@ -12,8 +15,8 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    const url_lang = 'languages/index';
-    fetch(url_lang)
+    const urlLang = 'languages/index';
+    fetch(urlLang)
       .then((response) => {
         if (response.ok) {
           return response.json();

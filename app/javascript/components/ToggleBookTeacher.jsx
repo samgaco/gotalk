@@ -1,5 +1,8 @@
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default-member */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
 import BookTeacherButton from './BookTeacherButton';
 import Scheduler from './Scheduler';
 

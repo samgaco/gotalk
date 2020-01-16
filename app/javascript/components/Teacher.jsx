@@ -1,72 +1,72 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import ToggleBookTeacher from "./ToggleBookTeacher";
-import { CircleToBlockLoading } from 'react-loadingg';
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable react/prop-types */
+/* eslint-disable class-methods-use-this */
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ToggleBookTeacher from './ToggleBookTeacher';
 
 
 class Teacher extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      teacher: { description: "" },
-       isOpen: false ,
-       current_user: [] ,
-       teacher:[],
-       startDate: new Date()
-       };
+    this.state = {
+      current_user: [],
+      teacher: [],
+      startDate: new Date(),
+    };
 
 
     this.addHtmlEntities = this.addHtmlEntities.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
   }
 
-  handleDateChange = event => {
-    this.setState({
-      startDate: event
-    });
-  };
-  
   componentDidMount() {
-
     const {
       match: {
-        params: { id }
-      }
+        params: { id },
+      },
     } = this.props;
 
     const url = `/show/${id}`;
 
     fetch(url)
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           return response.json();
         }
-        throw new Error("Network response was not ok.");
+        throw new Error('Network response was not ok.');
       })
-      .then(response => this.setState({ teacher: response }))
-      .catch(() => this.props.history.push("/teachers"));
+      .then((response) => this.setState({ teacher: response }))
+      .catch(() => this.props.history.push('/teachers'));
 
-      const url_user = "/users/index";
-      fetch(url_user)
-        .then(response => {
-          if (response.ok) {
-            return response.json();
-          }
-          throw new Error("Network response was not ok.");
-        })
-        .then(response => this.setState({ current_user: response }))
+    const urlUser = '/users/index';
+    fetch(urlUser)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Network response was not ok.');
+      })
+      .then((response) => this.setState({ current_user: response }));
   }
 
   addHtmlEntities(str) {
     return String(str)
-      .replace(/&lt;/g, "<")
-      .replace(/&gt;/g, ">");
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>');
+  }
+
+  handleDateChange(event) {
+    this.setState({
+      startDate: event,
+    });
   }
 
 
   render() {
     const { teacher } = this.state;
-    let teacherLanguages = `${teacher.language}`;
+    const teacherLanguages = `${teacher.language}`;
     const teacherDescription = this.addHtmlEntities(teacher.description);
 
     return (
@@ -84,28 +84,24 @@ class Teacher extends React.Component {
           <div className="row">
             <div className="col-sm-12 col-lg-3">
               <ul className="list-group">
-              <h1>
-            {teacher.name}
-          </h1>
+                <h1>
+                  {teacher.name}
+                </h1>
                 <h5 className="mb-2">Languages:</h5>
                 {teacherLanguages}
               </ul>
             </div>
             <div className="mb-2 col-sm-12 col-lg-7">
               <h5 className="mb-2">Description:</h5>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `${teacherDescription}`
-                }}
-              />
+              { teacherDescription }
             </div>
             <div className="col-sm-12 col-lg-3">
-                <ToggleBookTeacher 
-                current_user={this.state.current_user} 
+              <ToggleBookTeacher
+                current_user={this.state.current_user}
                 teacherId={teacher.id}
                 handleDateChange={this.handleDateChange}
                 date={this.state.startDate}
-                />
+              />
             </div>
           </div>
           <Link to="/teachers" className="btn btn-link">
@@ -115,7 +111,6 @@ class Teacher extends React.Component {
       </div>
     );
   }
-
 }
 
 export default Teacher;

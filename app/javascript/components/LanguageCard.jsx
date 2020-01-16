@@ -1,7 +1,8 @@
+/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
 import './styles/teachers.scss';
-import { Link } from 'react-router-dom';
 
 class LanguageCard extends React.Component {
   render() {

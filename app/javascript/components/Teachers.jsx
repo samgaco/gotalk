@@ -1,3 +1,9 @@
+/* eslint-disable consistent-return */
+/* eslint-disable func-names */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable react/no-access-state-in-setstate */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -34,10 +40,6 @@ class Teachers extends React.Component {
       teachers: [],
       current_user: [],
       languages: [],
-      meetings: [],
-      filter: '',
-      filterRate: '',
-
     };
     this.addLike = this.addLike.bind(this);
     this.handleFilterChange = this.handleFilterChange.bind(this);
@@ -45,16 +47,6 @@ class Teachers extends React.Component {
     this.mapTeachers = this.mapTeachers.bind(this);
     this.filterWrap = this.filterWrap.bind(this);
     this.orderTeachersByLikes = this.orderTeachersByLikes.bind(this);
-  }
-
-  handleFilterChange(event) {
-    event.preventDefault();
-    this.props.filterTeachers(event.target.value);
-  }
-
-  handleFilterRateChange(event) {
-    event.preventDefault();
-    this.props.filterRatesTeachers(event.target.value);
   }
 
   componentDidMount() {
@@ -70,8 +62,8 @@ class Teachers extends React.Component {
       .catch(() => this.props.history.push('/'));
 
 
-    const url_user = 'users/index';
-    fetch(url_user)
+    const urlUser = 'users/index';
+    fetch(urlUser)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -81,8 +73,8 @@ class Teachers extends React.Component {
       .then((response) => this.setState({ current_user: response }))
       .catch(() => this.props.history.push('/'));
 
-    const url_lang = 'languages/index';
-    fetch(url_lang)
+    const urlLang = 'languages/index';
+    fetch(urlLang)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -91,6 +83,16 @@ class Teachers extends React.Component {
       })
       .then((response) => this.setState({ languages: response }))
       .catch(() => this.props.history.push('/'));
+  }
+
+  handleFilterChange(event) {
+    event.preventDefault();
+    this.props.filterTeachers(event.target.value);
+  }
+
+  handleFilterRateChange(event) {
+    event.preventDefault();
+    this.props.filterRatesTeachers(event.target.value);
   }
 
   addLike(teacherId) {
@@ -106,7 +108,7 @@ class Teachers extends React.Component {
   }
 
   mapTeachers(teachers) {
-    return teachers.map((teacher, index) => (
+    return teachers.map((teacher) => (
       <TeacherCard
         key={teacher.id}
         name={teacher.name}
@@ -122,10 +124,11 @@ class Teachers extends React.Component {
   }
 
   allTeachers(filter) {
+    const { teachers } = this.state;
     if (filter === '') {
-      return this.state.teachers;
+      return teachers;
     }
-    const teachersLanguage = this.state.teachers.filter((teacher) => teacher.language === filter);
+    const teachersLanguage = teachers.filter((teacher) => teacher.language === filter);
     return teachersLanguage;
   }
 
@@ -166,6 +169,7 @@ class Teachers extends React.Component {
           {' '}
           <Link to="/new_teacher">join as a teacher</Link>
         </h4>
+
       </div>
     );
 
