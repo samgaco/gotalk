@@ -5,7 +5,7 @@ import filterRateReducer from './filterRate';
 
 const rootReducer = combineReducers({
   filter: filterReducer,
-  filterRate: filterRateReducer
+  filterRate: filterRateReducer,
 });
 
 export default rootReducer;

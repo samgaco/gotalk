@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import BookTeacherButton from "./BookTeacherButton";
-import Scheduler from "./Scheduler";
+import React from 'react';
+import PropTypes from 'prop-types';
+import BookTeacherButton from './BookTeacherButton';
+import Scheduler from './Scheduler';
 
 
 class ToggleBookTeacher extends React.Component {
@@ -15,28 +15,31 @@ class ToggleBookTeacher extends React.Component {
   }
 
 
-  openScheduler(){
-        this.setState({isOpen: true})
-  };
+  openScheduler() {
+    this.setState({ isOpen: true });
+  }
 
-  closeScheduler(){
-    this.setState({isOpen: false})
-};
+  closeScheduler() {
+    this.setState({ isOpen: false });
+  }
 
   render() {
     if (this.state.isOpen) {
-      return <Scheduler 
-      current_user={this.props.current_user}
-      teacherId={this.props.teacherId}
-      handleDateChange={this.props.handleDateChange}
-      date={this.props.date}
-      closeScheduler={this.closeScheduler}
-      />;
-    } else {
-      return <BookTeacherButton 
-      openScheduler={this.openScheduler}
-      />;
+      return (
+        <Scheduler
+          current_user={this.props.current_user}
+          teacherId={this.props.teacherId}
+          handleDateChange={this.props.handleDateChange}
+          date={this.props.date}
+          closeScheduler={this.closeScheduler}
+        />
+      );
     }
+    return (
+      <BookTeacherButton
+        openScheduler={this.openScheduler}
+      />
+    );
   }
 }
 

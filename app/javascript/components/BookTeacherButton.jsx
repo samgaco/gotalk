@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
-import './styles/teachers.scss'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './styles/teachers.scss';
 
 class BookTeacherButton extends React.Component {
-  render () {
+  render() {
     return (
       <button onClick={this.props.openScheduler} type="button" className="btn contactButton">
       Book a class
@@ -12,4 +12,4 @@ class BookTeacherButton extends React.Component {
   }
 }
 
-export default BookTeacherButton
+export default BookTeacherButton;
