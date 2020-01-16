@@ -3,13 +3,13 @@ const Actions = (() => {
   const CHANGE_FILTER_RATE = 'CHANGE_FILTER_RATE';
 
 
-  const changeFilter = (filter) => ({
+  const changeFilter = filter => ({
     type: CHANGE_FILTER,
     filter,
   });
 
 
-  const changeRateFilter = (filter) => ({
+  const changeRateFilter = filter => ({
     type: CHANGE_FILTER_RATE,
     filterRate: filter,
   });
