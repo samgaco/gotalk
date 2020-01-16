@@ -11,6 +11,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3', '~> 1.4'
 end
+gem 'ruby-graphviz'
+
+gem 'rails-erd', group: :develop
 
 group :production do 
   gem 'pg'
