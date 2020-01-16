@@ -1,7 +1,7 @@
   <h3 align="center">GoTalk</h3>
 
 
-  <img src="docs/images/gotalk1.png" alt="Logo">
+  <img align="center" src="docs/images/gotalk1.png" alt="Logo">
 
 
   <p align="center">
