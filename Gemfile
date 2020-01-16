@@ -6,7 +6,6 @@ ruby '2.6.2'
 group :development, :test do
   gem 'capybara'
   gem 'factory_bot_rails'
-  gem 'faker'
   gem 'launchy'
   gem 'rspec-rails'
   gem 'sqlite3', '~> 1.4'
@@ -14,6 +13,7 @@ end
 gem 'ruby-graphviz'
 
 gem 'rails-erd', group: :develop
+gem 'faker'
 
 group :production do 
   gem 'pg'
