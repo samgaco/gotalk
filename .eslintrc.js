@@ -22,7 +22,13 @@ module.exports = {
     'react',
   ],
   rules: {
-    "import/extensions": "off",
     "import/no-unresolved": "off"
   },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js','.jsx','.vue']
+      }
+    },
+  }
 };
