@@ -1,65 +1,64 @@
-import * as React from 'react'
-import classnames from 'classnames'
-import '../styles/teachers.scss'
+import * as React from 'react';
+import classnames from 'classnames';
+import '../styles/teachers.scss';
 
 
 class Filter extends React.Component {
-    constructor(props) {
-        super(props);
-      }
-  
+  constructor(props) {
+    super(props);
+  }
 
 
-    render() {
-        const CATEGORIES = this.props.languages
-        const options = CATEGORIES.map(category => <option key={category}>{category}</option>);
-        const containerClasses = classnames('container', 'GoTalk-BgAndColor', 'shadow')
-        const formClasses = classnames('form-horizontal', 'GoTalk-BgAndColor')
+  render() {
+    const CATEGORIES = this.props.languages;
+    const options = CATEGORIES.map((category) => <option key={category}>{category}</option>);
+    const containerClasses = classnames('container', 'GoTalk-BgAndColor', 'shadow');
+    const formClasses = classnames('form-horizontal', 'GoTalk-BgAndColor');
 
-        return (
-            <div className={containerClasses}>
-                <form className={formClasses} noValidate>
-                    <p className="mb-1">Refine your results</p>
-                    <div className="columns text-center">
+    return (
+      <div className={containerClasses}>
+        <form className={formClasses} noValidate>
+          <p className="mb-1">Refine your results</p>
+          <div className="columns text-center">
 
-                        <div className="column col-4 col-xs-12">
-                            <div className="form-group">
-                                <div className="col-3 col-sm-12">
-                                    <label className="form-label" htmlFor="language">
+            <div className="column col-4 col-xs-12">
+              <div className="form-group">
+                <div className="col-3 col-sm-12">
+                  <label className="form-label" htmlFor="language">
                                         Language
                   </label>
-                                </div>
-                                <div className="col-9 col-sm-12">
-                                    <select className="form-select" id="language" onChange={this.props.handleFilterChange}>
-                                        <option value="">All</option>
+                </div>
+                <div className="col-9 col-sm-12">
+                  <select className="form-select" id="language" onChange={this.props.handleFilterChange}>
+                    <option value="">All</option>
 
-                                        {options}
+                    {options}
 
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="column col-4 col-xs-12">
-                            <div className="form-group">
-                                <div className="col-3 col-sm-12">
-                                    <label className="form-label" htmlFor="sortorder">
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div className="column col-4 col-xs-12">
+              <div className="form-group">
+                <div className="col-3 col-sm-12">
+                  <label className="form-label" htmlFor="sortorder">
                                         Sort Order by rates
                   </label>
-                                </div>
-                                <div className="col-9 col-sm-12">
-                                    <select className="form-select" id="sortorder" onChange={this.props.handleFilterRateChange}>
-                                        <option value="">Order by...</option>
-                                        <option key={1}>Most expensive first</option>
-                                        <option key={2}>Less expensive first</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                </div>
+                <div className="col-9 col-sm-12">
+                  <select className="form-select" id="sortorder" onChange={this.props.handleFilterRateChange}>
+                    <option value="">Order by...</option>
+                    <option key={1}>Most expensive first</option>
+                    <option key={2}>Less expensive first</option>
+                  </select>
+                </div>
+              </div>
             </div>
-        )
-    }
+          </div>
+        </form>
+      </div>
+    );
+  }
 }
 
-export default Filter
+export default Filter;

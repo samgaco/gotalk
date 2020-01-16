@@ -1,13 +1,11 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "../components/Home";
-import Teachers from "../components/Teachers";
-import Teacher from "../components/Teacher";
-import TeacherCard from "../components/TeacherCard";
-import Meetings from "../components/meetings/Meetings";
-import newteacher from "../components/newteachers/Index";
-
-
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from '../components/Home';
+import Teachers from '../components/Teachers';
+import Teacher from '../components/Teacher';
+import TeacherCard from '../components/TeacherCard';
+import Meetings from '../components/meetings/Meetings';
+import newteacher from '../components/newteachers/Index';
 
 
 export default (

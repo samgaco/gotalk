@@ -1,24 +1,23 @@
-import React from "react";
-import { render } from "react-dom";
+import React from 'react';
+import { render } from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import App from "../components/App";
-import { createStore, applyMiddleware, compose } from 'redux'
-import { middleWare, apiReducer, railsActions } from 'redux-rails'
+import { createStore, applyMiddleware, compose } from 'redux';
+import { middleWare, apiReducer, railsActions } from 'redux-rails';
 import { Provider } from 'react-redux';
+import App from '../components/App';
 import rootReducer from '../reducers';
-
 
 
 const store = createStore(rootReducer, { }, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   render(
     <Provider store={store}>
-    <App />
+      <App />
     </Provider>,
-    document.body.appendChild(document.createElement("div"))
+    document.body.appendChild(document.createElement('div')),
   );
 });
