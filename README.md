@@ -1,10 +1,8 @@
   <h3 align="center">GoTalk</h3>
 
+  <p align="center">
 
   <img align="center" src="docs/images/gotalk1.png" alt="Logo">
-
-
-  <p align="center">
     Ruby on Rails & React Project
     <br />
     <br />
