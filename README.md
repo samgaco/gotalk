@@ -3,6 +3,9 @@
   <p align="center">
 
   <img align="center" src="docs/images/gotalk1.png" alt="Logo">
+  
+  </p>
+    <p align="center">
     Ruby on Rails & React Project
     <br />
     <br />
