@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import TeacherCard from './TeacherCard';
 import Filter from './filter/index';
 import Actions from '../actions';
-import 'styles/teachers.scss';
+import './styles/teachers.scss';
 
 
 const mapStateToProps = function (state) {
