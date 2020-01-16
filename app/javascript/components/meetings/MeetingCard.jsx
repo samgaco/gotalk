@@ -1,8 +1,8 @@
+/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable no-useless-constructor */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import '../styles/teachers.scss';
 
 
