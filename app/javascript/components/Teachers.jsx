@@ -12,7 +12,6 @@ import Filter from './filter/index';
 import Actions from '../actions';
 import '../../assets/stylesheets/main.scss';
 
-
 const mapStateToProps = function (state) {
   return {
     teachers: state.teachers,
@@ -162,8 +161,6 @@ class Teachers extends React.Component {
 
     const noTeachers = (
       <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
-        <Filter languages={this.state.languages} />
-
         <h4>
               No teachers yet. Why not
           {' '}

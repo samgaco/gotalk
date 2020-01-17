@@ -58,9 +58,13 @@ class Teacher extends React.Component {
   }
 
   handleDateChange(event) {
+    console.log(event)
+
+
     this.setState({
       startDate: event,
     });
+    console.log("last", this.state.startDate)
   }
 
 

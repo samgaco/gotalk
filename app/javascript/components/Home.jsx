@@ -4,7 +4,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LanguageCard from './LanguageCard';
-
+import hide from '../helpers/helper';
 
 class Home extends React.Component {
   constructor(props) {
@@ -15,6 +15,7 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
+    hide;
     const urlLang = 'languages/index';
     fetch(urlLang)
       .then((response) => {

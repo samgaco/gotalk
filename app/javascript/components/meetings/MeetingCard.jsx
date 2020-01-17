@@ -14,7 +14,7 @@ class MeetingCard extends React.Component {
 
   render() {
     return (
-      <div className="col-md-6 col-lg-12 givemargin">
+      <div className="col-12 givemargin">
         <div className="card mb-8 shadow">
           <div className="card-body">
             {this.props.likes}

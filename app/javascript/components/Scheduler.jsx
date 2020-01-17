@@ -16,8 +16,11 @@ class Scheduler extends React.Component {
     this.state = {
       startDate: new Date(),
     };
-  }
 
+    this.SubmitMeeting = this.SubmitMeeting.bind(this);
+    this.handleCreateMeeting = this.handleCreateMeeting.bind(this);
+    this.CreateMeeting = this.CreateMeeting.bind(this);
+  }
 
   CreateMeeting(data) {
     const url = 'meetings/create';
@@ -36,8 +39,9 @@ class Scheduler extends React.Component {
   }
 
   SubmitMeeting() {
+    const {date} = this.props;
     const newMeeting = {
-      scheduled: new Date(this.props.date).toISOString(),
+      scheduled: new Date(date).toISOString(),
       teacher_id: this.props.teacherId,
       user_id: this.props.current_user.id,
       length: 60,
