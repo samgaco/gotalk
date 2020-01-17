@@ -9,6 +9,8 @@ require('@rails/activestorage').start();
 require('channels');
 import 'bootstrap'
 import '../stylesheets/application'
+import 'react-datepicker/dist/react-datepicker.css';
+
 
 document.addEventListener("turbolinks:load", ()=>{
     $('[data-toggle="tooltip"]').tooltip()
