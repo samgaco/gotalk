@@ -1,87 +1,36 @@
-.signup{
-    margin-left: 400px
+.form__field--input{
+
+    width: 40%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin-bottom: 2%;
+
 }
 
-
-.GoTalk-BgAndColor{
-    background: #e1fff7;
-    color: #48c4b0;
-}
-
-.Go-bg{
-    background: #e1fff7;
-}
-
-.Go-font{
-    color: #48c4b0;
-}
-
-.contactButton{
-    background: linear-gradient(to right , #28af9d, #19665e);
-    border-radius: 10px;
+.form__actions--submit{
+    width: 40%;
+    background-color:#28af9d;
     color: white;
-    font-weight: bolder;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.like{
-    color:red;
+.form__h1{
+    color:#28af9d;
 }
 
-.givemargin{
-    margin: 2%;
+.form__title{
+    color:#28af9d;
+    font-size: 0.9rem;
 }
 
-.useFont{
-    font-family: 'Roboto', sans-serif;
+.form{
+    margin-left:30rem;
+    margin-top: 5rem;
 }
-
-.language-card-list{
-    margin-top: 2%;
-}
-
-.language-card{
-    height: 4.5rem;
-    font-size: 1.4rem;
-    padding-top: 1%;
-}
-
-
-.teacherFull{
-    margin-top: 20rem;
-}
-
-.teacherBody{
-    margin-top: 20rem;
-}
-
-.linkremove{
-    text-decoration-color: "none",
-}
-
-
-// Filter fields
-
-
-select {
-    $bg-color: lightcyan;
-    $text-color: black;
-    appearance: none; // using -prefix-free https://leaverou.github.io/prefixfree/
-    background: {
-      color: $bg-color;
-      image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1255/caret--down-15.png");
-      position: right;
-      repeat: no-repeat;
-    }
-    border: {
-      color: mix($bg-color, black, 80%);
-      radius: .2em;
-      style: solid;
-      width: 1px;
-      right-color: mix($bg-color, black, 60%);
-      bottom-color: mix($bg-color, black, 60%);
-    }
-    color: $text-color;
-    padding: .33em .5em;
-    width: 100%;
-  }
   
