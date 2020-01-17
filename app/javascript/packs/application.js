@@ -10,7 +10,7 @@ require('channels');
 import 'bootstrap'
 import '../stylesheets/application'
 import 'react-datepicker/dist/react-datepicker.css';
-
+import '../../assets/stylesheets/main.scss';
 
 document.addEventListener("turbolinks:load", ()=>{
     $('[data-toggle="tooltip"]').tooltip()
