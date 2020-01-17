@@ -11,6 +11,8 @@ import TeacherCard from './TeacherCard';
 import Filter from './filter/index';
 import Actions from '../actions';
 import '../../assets/stylesheets/main.scss';
+import { Slide } from '@material-ui/core';
+
 
 const mapStateToProps = function (state) {
   return {
@@ -108,6 +110,7 @@ class Teachers extends React.Component {
 
   mapTeachers(teachers) {
     return teachers.map((teacher) => (
+      <Slide direction="up" in={true} mountOnEnter unmountOnExit>
       <TeacherCard
         key={teacher.id}
         name={teacher.name}
@@ -119,6 +122,8 @@ class Teachers extends React.Component {
         addLike={this.addLike}
         current_user={this.state.current_user}
       />
+        </Slide>
+
     ));
   }
 
@@ -214,7 +219,7 @@ class Teachers extends React.Component {
               </Link>
             </div>
             <div className="row">
-              {teachers.length > 0 ? this.mapTeachers(this.filterWrap()) : noTeachers}
+              {teachers.length > 0 ?  this.mapTeachers(this.filterWrap()) : noTeachers}
             </div>
             <Link to="/" className="btn btn-link">
                     Home

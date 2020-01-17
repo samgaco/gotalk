@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import MeetingCard from './MeetingCard';
 import '../styles/teachers.scss';
 import Teachers from '../Teachers';
+import { Slide } from '@material-ui/core';
 
 
 class Meetings extends React.Component {
@@ -30,6 +31,7 @@ class Meetings extends React.Component {
   render() {
     const { meetings } = this.state;
     const allMeetings = meetings.map((meeting, index) => (
+      <Slide direction="up" in={true} mountOnEnter unmountOnExit>
       <MeetingCard
         key={meeting.id}
         time={meeting.scheduled}
@@ -38,6 +40,7 @@ class Meetings extends React.Component {
         teacher={meeting.teacher.name}
         language={meeting.teacher.language}
       />
+      </Slide>
     ));
     const noMeetings = (
       <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">

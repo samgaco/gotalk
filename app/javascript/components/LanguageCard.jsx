@@ -4,6 +4,7 @@
 import React from 'react';
 import './styles/teachers.scss';
 
+
 class LanguageCard extends React.Component {
   render() {
     return (

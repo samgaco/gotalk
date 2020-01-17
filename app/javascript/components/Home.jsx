@@ -5,6 +5,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LanguageCard from './LanguageCard';
 import hide from '../helpers/helper';
+import { Slide } from '@material-ui/core';
 
 class Home extends React.Component {
   constructor(props) {
@@ -31,10 +32,12 @@ class Home extends React.Component {
 
   render() {
     const DisplayLanguages = this.state.languages.map((language, index) => (
+      <Slide direction="up" in={true} mountOnEnter unmountOnExit>
       <LanguageCard
         key={index}
         language={language}
       />
+      </Slide>
     ));
 
     return (
