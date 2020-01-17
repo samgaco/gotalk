@@ -1,7 +1,6 @@
 {
   "name": "gotalk",
   "private": true,
-  "clean-start": "rm -rf node_modules && yarn install && rm -rf $TMPDIR/react* && npm start --reset-cache",
   "dependencies": {
     "@babel/preset-react": "^7.7.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
@@ -14,7 +13,6 @@
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "boostrap": "^2.0.0",
     "bootstrap": "4.3.1",
     "clean-start": "^1.0.8",
     "jquery": "^3.4.1",
@@ -32,7 +30,8 @@
     "redux-rails-resource": "^1.0.2",
     "ts-loader": "^6.2.1",
     "turbolinks": "^5.2.0",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5"
   },
   "version": "0.1.0",
   "devDependencies": {
