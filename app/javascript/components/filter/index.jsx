@@ -30,7 +30,7 @@ class Filter extends React.Component {
                   <select className="form-select" id="language" onChange={handleFilterChange}>
                     <option value="">All</option>
 
-                    {languages? options:console.log("I want fufu")}
+                    {languages? options:true }
 
                   </select>
                 </div>
