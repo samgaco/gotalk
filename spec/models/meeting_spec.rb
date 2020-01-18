@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Meeting, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'Adds a meeting' do
+    meeting = FactoryBot.build(:meeting)
+    expect{meeting.save}.to change(Meeting, :count).by(1)
+  end
 end

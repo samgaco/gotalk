@@ -21,12 +21,6 @@ module.exports = {
   plugins: [
     'react',
   ],
-  rules: { "import/no-unresolved": [ 2, { caseSensitive: false } ],
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js','.jsx','.vue']
-      }
-    },
-  }
+  rules: {
+  },
 };

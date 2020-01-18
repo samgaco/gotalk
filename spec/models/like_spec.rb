@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'Adds a meeting' do
+    like = FactoryBot.build(:like)
+    expect{like.save}.to change(Like, :count).by(1)
+  end
 end

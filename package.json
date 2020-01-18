@@ -13,9 +13,14 @@
     "@rails/webpacker": "4.2.2",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.9.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "bootstrap": "4.3.1",
     "clean-start": "^1.0.8",
+    "enzyme": "^3.11.0",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
     "prop-types": "^15.7.2",
@@ -29,6 +34,7 @@
     "redux": "^4.0.5",
     "redux-rails": "^1.0.0",
     "redux-rails-resource": "^1.0.2",
+    "save-dev": "^0.0.1-security",
     "ts-loader": "^6.2.1",
     "turbolinks": "^5.2.0",
     "typescript": "^3.7.4",
@@ -43,5 +49,8 @@
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "webpack-dev-server": "^3.10.1"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }
