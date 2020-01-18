@@ -10,7 +10,6 @@ import { connect } from 'react-redux';
 import TeacherCard from './TeacherCard';
 import Filter from './filter/index';
 import Actions from '../actions';
-import '../../assets/stylesheets/main.scss';
 import { Slide } from '@material-ui/core';
 
 

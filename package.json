@@ -21,6 +21,9 @@
     "bootstrap": "4.3.1",
     "clean-start": "^1.0.8",
     "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^24.9.0",
+    "jest-enzyme": "^7.1.2",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
     "prop-types": "^15.7.2",
@@ -48,9 +51,22 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "regenerator-runtime": "^0.13.3",
     "webpack-dev-server": "^3.10.1"
   },
   "scripts": {
     "test": "jest"
+  },
+  
+  "jest": {
+      "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+      "moduleNameMapper": {
+        "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+        "<rootDir>/test/javascript/__mocks__/fileMock.js",
+        "\\.(css|less)$": "<rootDir>/test/javascript/__mocks__/styleMock.js"
+      },
+    "roots": [
+        "app/javascript"
+      ]
   }
 }

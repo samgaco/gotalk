@@ -2,7 +2,6 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import './styles/teachers.scss';
 
 class BookTeacherButton extends React.Component {
   render() {

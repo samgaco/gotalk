@@ -6,8 +6,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import './styles/teachers.scss';
+// import 'react-datepicker/dist/react-datepicker.css';
 
 
 class Scheduler extends React.Component {

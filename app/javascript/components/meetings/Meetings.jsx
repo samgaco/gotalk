@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MeetingCard from './MeetingCard';
-import '../styles/teachers.scss';
 import Teachers from '../Teachers';
 import { Slide } from '@material-ui/core';
 

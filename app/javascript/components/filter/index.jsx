@@ -4,7 +4,6 @@
 import * as React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import classnames from 'classnames';
-import '../styles/teachers.scss';
 
 class Filter extends React.Component {
   render() {

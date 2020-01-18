@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import '../../assets/stylesheets/main.scss';
 
 
 class TeacherCard extends React.Component {
