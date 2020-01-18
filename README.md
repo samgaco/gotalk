@@ -9,11 +9,11 @@
     Ruby on Rails & React Project
     <br />
     <br />
-    <a href="">View Demo</a>
+    <a href="https://gotalkmyapp.herokuapp.com/">View Demo</a>
     ·
-    <a href="">Report Bug</a>
+    <a href="https://github.com/samgaco/gotalk/issues">Report Bug</a>
     ·
-    <a href="">Request Feature</a>
+    <a href="https://github.com/samgaco/gotalk/issues">Request Feature</a>
   </p>
 </p>
 
