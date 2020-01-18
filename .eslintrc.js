@@ -7,6 +7,7 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
   ],
+  rules: { "import/no-unresolved": [ 2, { caseSensitive: false } ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
