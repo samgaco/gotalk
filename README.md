@@ -32,7 +32,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This in an application to book classes with language tutors. 
+
+GoTalk! is an application thought as an online language tutoring scheduler. Teachers will be able to sign in an offer their rates while the users can sign into the site and book their favorite teachers.
 
 ### Deployment
 
