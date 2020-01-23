@@ -28,7 +28,7 @@ class Teacher extends React.Component {
       },
     } = this.props;
 
-    const url = `/show/${id}`;
+    const url = `/teachers/${id}`;
 
     fetch(url)
       .then((response) => {
