@@ -1,4 +1,4 @@
-#Return all the languages available in the index
+# Return all the languages available in the index
 
 # frozen_string_literal: true
 
