@@ -1,5 +1,6 @@
-# frozen_string_literal: true
 # Manage crud operations related to meetings
+
+# frozen_string_literal: true
 
 class MeetingsController < ApplicationController
   skip_before_action :verify_authenticity_token
