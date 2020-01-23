@@ -99,7 +99,7 @@ class Teacher extends React.Component {
       </div>
 
       <div className="teacherpage-info d-flex justify-content-center">
-        <h3>Teacher Info</h3>
+        <h3 className="teacherpage-infonav">Teacher Info</h3>
       </div>
 
 

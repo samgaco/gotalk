@@ -90,6 +90,7 @@
     color: white;
     font-weight: bolder;
     width: 25rem;
+    margin-top: 1rem;
 }
 
 
@@ -104,4 +105,14 @@
 .teacherpage-descriptiontext{
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+.teacherpage-infonav{
+    height: 100%;
+    font-size: 1.1rem;
+}
+
+.teacherpage-infonav:hover{
+    border-bottom: 3px solid #48c4b0;
+    color: #48c4b0;
 }

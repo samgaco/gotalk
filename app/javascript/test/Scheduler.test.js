@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../components/App';
-import Scheduler from '../components/Scheduler'
+import Scheduler from '../components/Scheduler/Scheduler'
 import {configure, shallow, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16'
 import { bool } from 'prop-types';
