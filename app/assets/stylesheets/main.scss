@@ -58,3 +58,50 @@
 }
 
 
+// Teacher personal pages
+
+.teacherImage-bg{
+    background: linear-gradient(to right , #28af9d, #19665e);
+    height: 35rem;
+}
+
+.image-teacher{
+    max-width: 60%;
+    max-height: 60%;
+
+}
+
+.teacherpage-textup{
+    color: white;
+}
+.teacherpage-upper-in{
+    max-height: inherit;
+    margin-top: 2rem;
+}
+
+.teacherpage-uppart{
+    max-height: inherit;
+
+}
+
+.teacherpage-contactButton{
+    background: linear-gradient(to right , #28af9d, #19665e);
+    border-radius: 10px;
+    color: white;
+    font-weight: bolder;
+    width: 25rem;
+}
+
+
+.teacherpage-info{
+    border-top: 3px solid whitesmoke;
+    border-bottom: 3px solid whitesmoke;
+    height: 4rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    }
+
+.teacherpage-descriptiontext{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

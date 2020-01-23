@@ -6,7 +6,7 @@ import React from 'react';
 class BookTeacherButton extends React.Component {
   render() {
     return (
-      <button onClick={this.props.openScheduler} type="button" className="btn contactButton">
+      <button onClick={this.props.openScheduler} type="button" className="btn teacherpage-contactButton">
       Book a class
       </button>
     );

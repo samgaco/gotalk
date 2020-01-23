@@ -74,45 +74,50 @@ class Teacher extends React.Component {
     const teacherDescription = this.addHtmlEntities(teacher.description);
 
     return (
-      <div className="teacherFull">
-        <div className="hero position-relative d-flex align-items-center justify-content-center">
-          <img
-            src={teacher.image}
-            alt={`${teacher.name} image`}
-            className="img-fluid position-absolute"
-          />
-          <div className="overlay bg-dark position-absolute" />
+      <div>
+
+        <div className="teacherImage-bg d-flex flex-row flex-wrap justify-content-center">
+
+          <div className="teacherpage-upper-in">
+          <div className="teacherpage-uppart d-flex justify-content-center">
+            <h1 className="teacherpage-textup">{teacher.name}</h1>
+          </div>
+          <div className="teacherpage-uppart d-flex justify-content-center">
+
+            <img
+              src={teacher.image}
+              alt={`${teacher.name} image`}
+              className="image-teacher rounded-circle teacherpage-uppart"
+            />
+          </div>
+
+          <div className="teacherpage-uppart d-flex justify-content-center">
+            <h5 className="teacherpage-textup">{teacherLanguages} Language Teacher</h5>
+          </div>
 
         </div>
-        <div className="teacherBody container py-5">
-          <div className="row">
-            <div className="col-sm-12 col-lg-3">
-              <ul className="list-group">
-                <h1>
-                  {teacher.name}
-                </h1>
-                <h5 className="mb-2">Languages:</h5>
-                {teacherLanguages}
-              </ul>
-            </div>
-            <div className="mb-2 col-sm-12 col-lg-7">
-              <h5 className="mb-2">Description:</h5>
-              { teacherDescription }
-            </div>
-            <div className="col-sm-12 col-lg-3">
-              <ToggleBookTeacher
-                current_user={this.state.current_user}
-                teacherId={teacher.id}
-                handleDateChange={this.handleDateChange}
-                date={this.state.startDate}
-              />
-            </div>
-          </div>
-          <Link to="/teachers" className="btn btn-link">
-            Back to teachers
-          </Link>
-        </div>
       </div>
+
+      <div className="teacherpage-info d-flex justify-content-center">
+        <h3>Teacher Info</h3>
+      </div>
+
+
+      <h5 className="mb-2 teacherpage-descriptiontext"> { teacherDescription }:</h5>
+
+    <div className="d-flex justify-content-center">
+      <ToggleBookTeacher
+        current_user={this.state.current_user}
+        teacherId={teacher.id}
+        handleDateChange={this.handleDateChange}
+        date={this.state.startDate}
+      />
+    </div>
+      <Link to="/teachers" className="btn btn-link">
+        Back to teachers
+          </Link>
+
+          </div >
     );
   }
 }

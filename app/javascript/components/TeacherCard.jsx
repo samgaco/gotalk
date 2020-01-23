@@ -50,7 +50,7 @@ Lessons given
 
             <Link
               to={{
-                pathname: `/teachers/${this.props.id}`,
+                pathname: `/teacher/${this.props.id}`,
                 state: {
                   current_user: this.props.current_user,
                   teacherId: this.props.id,

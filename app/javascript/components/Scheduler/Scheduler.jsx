@@ -22,7 +22,7 @@ class Scheduler extends React.Component {
   }
 
   CreateMeeting(data) {
-    const url = 'meetings/create';
+    const url = '/teachers/meetings/create';
     fetch(url, {
       method: 'post',
       body: JSON.stringify(data),
