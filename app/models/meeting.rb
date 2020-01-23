@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 class Meeting < ApplicationRecord
-    belongs_to :teacher
-    belongs_to :user
+  belongs_to :teacher
+  belongs_to :user
 
-
-    def likes_count
-        self.likes.count
-    end
+  def likes_count
+    likes.count
+  end
 end

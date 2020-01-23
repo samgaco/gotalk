@@ -1,8 +1,10 @@
-class Teacher < ApplicationRecord
-    has_many :likes
-    has_many :meetings
+# frozen_string_literal: true
 
-    def likes_count
-        self.likes.count
-    end
+class Teacher < ApplicationRecord
+  has_many :likes
+  has_many :meetings
+
+  def likes_count
+    likes.count
+  end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -6,27 +8,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-30.times do 
-    Teacher.create(
-        name: Faker::Name.first_name,
-        language: Faker::Nation.language,
-        rate: rand(1...35),
-        description: Faker::Lorem.paragraphs(number: 1),
-        lessons: rand(0...500),
-        image: 'http://madrid.clubtres60.com/wp-content/uploads/2017/10/zona-alumno-tres60.jpg'
-    )
+30.times do
+  Teacher.create(
+    name: Faker::Name.first_name,
+    language: Faker::Nation.language,
+    rate: rand(1...35),
+    description: Faker::Lorem.paragraphs(number: 1),
+    lessons: rand(0...500),
+    image: 'http://madrid.clubtres60.com/wp-content/uploads/2017/10/zona-alumno-tres60.jpg'
+  )
 end
 
-10.times do 
-    User.create(
-        email: Faker::Internet.email,
-        password: '123456'
-    )
+10.times do
+  User.create(
+    email: Faker::Internet.email,
+    password: '123456'
+  )
 end
 
-10.times do 
-    Meeting.create(
-        scheduled: Faker::Time.between(from: DateTime.now, to: DateTime.now+30),
-        length: 60
-    )
+10.times do
+  Meeting.create(
+    scheduled: Faker::Time.between(from: DateTime.now, to: DateTime.now + 30),
+    length: 60
+  )
 end
