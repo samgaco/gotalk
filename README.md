@@ -39,11 +39,25 @@ GoTalk! is an application thought as an online language tutoring scheduler. Teac
 
 Clone the respository and run the following commands to run a local server.
 
+Install all the dependencies with:
 ```
 bundle install
+yarn
+```
+
+Run the application with:
+```
 rails db:migrate
 rails db:seed
 rails s
+```
+
+
+The test can be run with:
+
+```
+yarn jest
+bundle exec rspec
 ```
 
 ### Built With
