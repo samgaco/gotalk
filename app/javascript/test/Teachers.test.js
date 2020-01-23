@@ -18,11 +18,10 @@ const store = mockStore({
   });
 
 describe('Shallow <Teachers/>', () => {
-    const props = {current_user: {email: "whatever@gmail.com"}}
     it('renders without crashing', () => {
      const wrapper = shallow(
      <Provider store={store}>
-     <Teachers {...props}/>
+     <Teachers />
      </Provider>
      )
     }); 

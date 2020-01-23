@@ -4,26 +4,12 @@ class TeachersController < ApplicationController
     render json: teacher.to_json(methods: [:likes_count])
   end
 
-  def create
-    teacher = Teacher.create!(teacher_params)
-    if teacher
-      render json: teacher
-    else
-      render json: teacher.errors
-    end
-  end
-
   def show
     if teacher
       render json: teacher
     else
       render json: teacher.errors
     end
-  end
-
-  def destroy
-    teacher&.destroy
-    render json: { message: 'Teacher deleted!' }
   end
 
   private

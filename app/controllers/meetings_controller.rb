@@ -6,14 +6,6 @@ class MeetingsController < ApplicationController
         render json: meeting.to_json(:include => [:teacher])
     end
 
-    def show
-        if meeting
-          render json: meeting
-        else
-          render json: meeting.errors
-        end
-    end
-
     def create
       meeting = Meeting.create!(meeting_params)
       if teacher
