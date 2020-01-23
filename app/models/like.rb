@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-#Model for likes
+# Model for likes
 
 class Like < ApplicationRecord
   belongs_to :teacher
