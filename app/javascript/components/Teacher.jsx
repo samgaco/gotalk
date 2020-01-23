@@ -4,7 +4,7 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ToggleBookTeacher from './ToggleBookTeacher';
+import ToggleBookTeacher from './Scheduler/ToggleBookTeacher';
 
 
 class Teacher extends React.Component {

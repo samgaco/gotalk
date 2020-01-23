@@ -2,64 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.GoTalk-BgAndColor{
-    background: #e1fff7;
-    color: #48c4b0;
-}
-
-.Go-bg{
-    background: #e1fff7;
-}
-
-.Go-font{
-    color: #48c4b0;
-}
-
-.contactButton{
-    background: linear-gradient(to right , #28af9d, #19665e);
-    border-radius: 10px;
-    color: white;
-    font-weight: bolder;
-}
-
-.like{
-    color:red;
-}
-
-.givemargin{
-    margin: 2%;
-}
-
-.useFont{
-    font-family: 'Roboto', sans-serif;
-}
-
-.language-card-list{
-    margin-top: 2%;
-}
-
-.language-card{
-    height: 4.5rem;
-    font-size: 1.4rem;
-    padding-top: 1%;
-}
-
-
-.teacherFull{
-    margin-top: 20rem;
-}
-
-.teacherBody{
-    margin-top: 20rem;
-}
-
-.linkremove{
-    text-decoration-color: "none",
-}
-
-
 // Filter fields
-
 
 select {
     $bg-color: lightcyan;
@@ -84,3 +27,43 @@ select {
     width: 100%;
   }
   
+  .form__field--input{
+
+    width: 40rem;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin-bottom: 2%;
+
+}
+
+.form__actions--submit{
+    width: 40rem;
+    background-color:#28af9d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form__h1{
+    color:#28af9d;
+}
+
+.form__title{
+    color:#28af9d;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .form{
+    margin: 8vw auto auto auto;  }
+}
+
+@media (min-width: 600px) {
+    .form{
+        margin: 8vw auto auto 9vw;  }
+}
