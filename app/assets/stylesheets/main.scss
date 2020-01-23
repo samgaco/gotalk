@@ -2,6 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+::selection {
+    background: #48c4b0; /* WebKit/Blink Browsers */
+  }
+
+// main nav bar
+
+.main-navbar{
+    height: 3rem;
+    width: 90%;
+    margin-left: 2.5%;
+    margin-bottom: 1rem;
+}
+
+.nav-links{
+    font-size: 1.2rem;
+}
+
+.nav-links:hover{
+    border-bottom: 3px solid #48c4b0;
+    color: #48c4b0;
+}
+
+// main page general styles
+
 .GoTalk-BgAndColor{
     background: #e1fff7;
     color: #48c4b0;
