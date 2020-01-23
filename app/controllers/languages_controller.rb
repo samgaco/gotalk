@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+#Return all the languages available in the index
 
 class LanguagesController < ApplicationController
   def index

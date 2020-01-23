@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# Fetch user data
 
 class UsersController < ApplicationController
   def index
