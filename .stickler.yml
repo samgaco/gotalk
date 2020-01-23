@@ -16,3 +16,4 @@ files:
       - "node_modules/**/*"
       - "db/**"
       - "config/**"
+      - "app/helpers/**"
