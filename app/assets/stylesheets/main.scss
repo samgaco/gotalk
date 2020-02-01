@@ -1,0 +1,141 @@
+// Place all the styles related to the teachers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+::selection {
+    background: #48c4b0; /* WebKit/Blink Browsers */
+  }
+
+// main nav bar
+
+.main-navbar{
+    height: 3rem;
+    width: 90%;
+    margin-left: 2.5%;
+    margin-bottom: 1rem;
+}
+
+.nav-links{
+    font-size: 1.2rem;
+}
+
+.nav-links:hover{
+    border-bottom: 3px solid #48c4b0;
+    color: #48c4b0;
+}
+
+// main page general styles
+
+.GoTalk-BgAndColor{
+    background: #e1fff7;
+    color: #48c4b0;
+}
+
+.Go-bg{
+    background: #e1fff7;
+}
+
+.Go-font{
+    color: #48c4b0;
+}
+
+.contactButton{
+    background: linear-gradient(to right , #28af9d, #19665e);
+    border-radius: 10px;
+    color: white;
+    font-weight: bolder;
+}
+
+.like{
+    color:red;
+}
+
+.givemargin{
+    margin: 2%;
+}
+
+.useFont{
+    font-family: 'Roboto', sans-serif;
+}
+
+.language-card-list{
+    margin-top: 2%;
+}
+
+.language-card{
+    height: 4.5rem;
+    font-size: 1.4rem;
+    padding-top: 1%;
+}
+
+
+.teacherFull{
+    margin-top: 20rem;
+}
+
+.teacherBody{
+    margin-top: 20rem;
+}
+
+.linkremove{
+    text-decoration-color: "none",
+}
+
+
+// Teacher personal pages
+
+.teacherImage-bg{
+    background: linear-gradient(to right , #28af9d, #19665e);
+    height: 35rem;
+}
+
+.image-teacher{
+    max-width: 45%;
+    max-height: 45%;
+}
+
+.teacherpage-textup{
+    color: white;
+}
+.teacherpage-upper-in{
+    max-height: inherit;
+    margin-top: 2rem;
+}
+
+.teacherpage-uppart{
+    max-height: inherit;
+
+}
+
+.teacherpage-contactButton{
+    background: linear-gradient(to right , #28af9d, #19665e);
+    border-radius: 10px;
+    color: white;
+    font-weight: bolder;
+    width: 25rem;
+    margin-top: 1rem;
+}
+
+
+.teacherpage-info{
+    border-top: 3px solid whitesmoke;
+    border-bottom: 3px solid whitesmoke;
+    height: 4rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    }
+
+.teacherpage-descriptiontext{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.teacherpage-infonav{
+    height: 100%;
+    font-size: 1.1rem;
+}
+
+.teacherpage-infonav:hover{
+    border-bottom: 3px solid #48c4b0;
+    color: #48c4b0;
+}

@@ -1,4 +1,4 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
 # Specs in this file have access to a helper object that includes
 # the HomepageHelper. For example:
@@ -11,5 +11,4 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe HomepageHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
 end

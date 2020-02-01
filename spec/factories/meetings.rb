@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :meeting do
-    day { "2020-01-08" }
-    scheduled { "2020-01-08 11:05:52" }
+    user
+    teacher
+    scheduled { '2022-02-08 11:00:00' }
   end
 end

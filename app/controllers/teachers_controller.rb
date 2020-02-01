@@ -1,16 +1,9 @@
+# frozen_string_literal: true
+
 class TeachersController < ApplicationController
   def index
-    teacher = Teacher.all
-    render json: teacher
-  end
-
-  def create
-    teacher = Teacher.create!(recipe_params)
-    if teacher
-      render json: teacher
-    else
-      render json: teacher.errors
-    end
+    teacher = Teacher.includes(:likes).all
+    render json: teacher.to_json(methods: [:likes_count])
   end
 
   def show
@@ -19,11 +12,6 @@ class TeachersController < ApplicationController
     else
       render json: teacher.errors
     end
-  end
-
-  def destroy
-    teacher&.destroy
-    render json: { message: 'Teacher deleted!' }
   end
 
   private

@@ -1,0 +1,28 @@
+<div class="form">
+  <h1 class="form__h1">GoTalk!</h1>
+  <h2 class="form__title">Sign up</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="form__field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form__field--input", placeholder: "Email" %>
+    </div>
+
+    <div class="form__field">
+      <%= f.password_field :password, autocomplete: "new-password", class: "form__field--input", placeholder: "Password (6 Characters minimum)" %>
+    </div>
+
+    <div class="form__field">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form__field--input", placeholder: "Password Confirmation" %>
+    </div>
+
+    <div class="form__actions">
+      <%= f.submit "Sign up", class: "form__actions--submit" %>
+      <div class="form__actions--links">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  <% end %>
+
+</div>

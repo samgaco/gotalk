@@ -1,0 +1,17 @@
+<div class="form">
+  <h1 class="form__h1">Tech Talks</h1>
+  <h2 class="form__title">Forgot your password?</h2>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="form__field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form__field--input", placeholder: "Email" %>
+    </div>
+
+    <div class="form__actions">
+      <%= f.submit "Send instructions", class: "form__actions--submit" %>
+    </div>
+  <% end %>
+          <%= render "devise/shared/links" %>
+</div>
